@@ -11,8 +11,8 @@ var keystone = require('keystone');
 
 keystone.init({
 
-	'name': 'Colovo Shop',
-	'brand': 'Colovo Shop',
+	'name': 'Craft Shop',
+	'brand': 'Craft Shop',
 	
 	'stylus': 'public',
 	'static': 'public',
@@ -48,8 +48,8 @@ keystone.set('store gateway', 'stripe')
 keystone.set('store country', 'Canada')
 
 // Setup Stripe keys
-keystone.set('stripe secret key', 'STRIPE_SECRET_KEY')
-keystone.set('stripe publishable key', 'STRIPE_PUBLISHABLE_KEY')
+keystone.set('stripe secret key', process.env.STRIPE_SECRET_KEY || 'STRIPE_SECRET_KEY')
+keystone.set('stripe publishable key', process.env.STRIPE_PUBLISHABLE_KEY || 'STRIPE_PUBLISHABLE_KEY')
 
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
