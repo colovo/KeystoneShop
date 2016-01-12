@@ -1,0 +1,28 @@
+extends ../layouts/default
+
+block content
+	.container.store-container
+		if data.categories.length
+			.categories
+				h2 Categories
+				hr
+				.list-group
+					a(href='/store', class=!data.category ? 'active' : false).list-group-item All Categories
+					each cat in data.categories
+						a(href='/store/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+
+						each subCat in cat.categories
+							a(href='/store/' + subCat.key, class=data.category && data.category.id == subCat.id ? 'active' : false).list-group-item.sub-item= subCat.name
+		.store-content
+			if filters.category && !data.category
+				h3.text-muted Invalid Category.
+			else
+				h1= data.category ? data.category.name : 'Store'
+
+				each product in data.products.results
+					.product
+						if product.image.exists
+							.product-image: a(href='/product/' + product.slug): img(src=product._.image.fit(750,450)).img-responsive
+						
+						.product-title: a(href='/product/' + product.slug)= product.title
+						.product-price= numeral(product.price).format('$0,0.00')

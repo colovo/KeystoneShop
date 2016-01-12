@@ -1,0 +1,584 @@
+@import "nib"
+@import "../bootstrap/mixins"
+
+body
+	font-family 'Source Sans Pro', sans-serif
+
+p
+	font-size: 20px;
+	color: #656565;
+#header
+	margin-top 80px
+	margin-bottom 40px
+h1
+	font-size: 32px;
+h2
+	color #59b1ca
+	
+hr
+	color #656565
+
+.container.collections
+	margin-top 68px
+	
+	.collection
+		make-md-column(4)
+		
+		.collection-image
+			margin-top 20px
+			display block
+			height 360px
+			cursor pointer
+			position relative
+			
+			// Tag Line
+			.tag-line
+				font-size 10.0vw
+				line-height 1
+				font-weight 300
+				color white
+				text-align left
+				text-transform uppercase
+				vertical-align bottom
+				absolute bottom 12px left 16px
+				letter-spacing 5px
+				text-shadow 0px 2px 10px rgba(0,0,0,0.25)
+
+			// Collection Images			
+			&.living
+				background transparent url('/images/living.jpg') no-repeat
+				background-size cover
+				
+				&:hover
+					background-image url('/images/living-hover.jpg')
+			
+			&.kitchen
+				background transparent url('/images/dining.jpg') no-repeat
+				background-size cover
+				
+				&:hover
+					background-image url('/images/dining-hover.jpg')
+			
+			&.bedding
+				background transparent url('/images/resting.jpg') no-repeat
+				background-size cover
+				
+				&:hover
+					background-image url('/images/resting-hover.jpg')
+					
+.container.content
+	padding-top 100px
+	padding-bottom 100px
+	text-align center
+	padding-left 0px
+	padding-right 0px
+	
+	p
+		font-size 24px
+		color #656565
+		
+.home-banner-image
+	background transparent url('/images/homepagebanner.png') repeat-x
+	height 200px
+	background-size auto 100%
+	background-position center top
+
+.newsletter-form
+	background-color #5fb7cf
+	// min-height 500px
+	text-align center
+	position center
+	padding-bottom 100px
+
+	.call-to-action
+		make-md-column(8)
+		make-md-column-push(2)
+		text-align center
+		
+		p
+			color white
+			font-size 50px
+			font-weight 300
+			text-transform uppercase
+			padding-top 80px
+	
+	.subscribe-form-wrapper
+		make-md-column(8)
+		make-md-column-push(2)
+		
+		padding-left 60px
+		padding-right 60px
+		// margin-left 60px
+		// margin-right 60px
+		margin-top 40px
+		
+		.subscribe-form
+			width 100%
+			text-align left
+			display table
+			margin 0px
+			
+			.subscribe-field
+				width 80%
+				display table-cell
+				
+				input
+					background transparent
+					border none
+					font-size 26px
+					color white
+					padding-top 10px
+					padding-bottom 10px
+					padding-left 15px
+					border solid 1px white
+					border-right none
+					margin 0px
+					width 100%
+					
+					&:focus
+						outline none
+					
+					&::-webkit-input-placeholder
+						color white
+			
+			.subscribe-submit
+				width 20%
+				display table-cell
+				
+				.btn
+					background white
+					color #5fb7cf
+					border-radius 0px
+					border none
+					font-size 26px
+					padding-top 10px
+					padding-bottom 10px
+					border 1px solid white
+					vertical-align inherit
+					margin 0px
+					width 100%
+					
+					&:active
+						box-shadow none
+		
+.navbar-default
+	background-color transparent
+	border-color transparent
+	font-weight 200
+	text-transform uppercase
+	
+	.container-fluid
+		padding-left 0px
+		padding-right 0px
+
+a.navbar-brand
+	margin-right 80px
+	background-image url('/images/logo.png')
+	background-size 200px
+	width 200px
+	background-repeat no-repeat
+	background-position center center
+	
+.navbar-nav > li > a
+	padding-right 30px
+	padding-top 20px
+	font-size 20px
+	
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
+	background-color transparent 
+
+.container.no-padding
+	padding-left 0px
+	padding-right 0px
+
+.home-image
+	background transparent url('/images/mainimage.png') no-repeat
+	background-size cover
+	height 638px
+	padding-right 0px
+	padding-left 0px
+	background-position center top
+	overflow hidden
+
+	.container
+		height 638px
+		position relative
+		
+		.tag-line
+			font-size 50px
+			line-height 1
+			font-weight 300
+			color white
+			text-align right
+			text-transform uppercase
+			vertical-align bottom
+			absolute bottom 60px right
+			width 100%
+			letter-spacing 10px
+			text-shadow 0px 2px 10px rgba(0,0,0,0.25)
+
+#footer
+	margin-top 30px
+	border-top 1px solid gray-lighter
+	padding-top 30px
+	color gray-light
+
+.gallery-image img
+	display block
+	max-width 100%
+	height auto
+
+.product
+	make-sm-column(4)
+	min-height 180px
+	text-align center
+	
+.product-price
+	color #59b1ca
+	font-size 1.4em
+
+.product-title
+	padding-top 10px
+	
+	a
+		color #656565
+		font-size 1.6em
+	
+.product-price-product
+	color #59b1ca
+	font-size 1.6em
+
+.categories
+	make-sm-column(3)
+	padding-left 0px
+	// padding-right 100px
+	
+	h2
+		margin-top 0px
+	
+	.list-group
+		padding-left: 0px
+		
+		.list-group-item
+			background transparent
+			color #656565
+			border none
+			padding-left 0px
+			font-size 1.3em
+			
+			&:hover
+				background transparent
+				color #5fb7cf
+				
+			&.active
+				background transparent
+				color #5fb7cf
+				border none
+			
+		.list-group-item.sub-item
+			padding-left 15px
+
+#addToCart
+	display inline-block
+	color white
+	font-size 1.4em
+	cursor pointer
+	
+	.btn-text
+		background #5ab2cb
+		display block
+		float left
+		vertical-align middle
+		padding 20px
+		padding-top 16px
+		padding-bottom 16px
+		margin-right 1px
+
+	.btn-count
+		background #656565
+		padding 20px
+		display none
+		float left
+		vertical-align middle
+		padding-top 16px
+		padding-bottom 16px
+		margin 0px
+	
+	&:hover
+		.btn-text
+			background darken(#5ab2cb, 5%)
+		
+		.btn-count
+			background darken(#656565, 5%)
+.btn-cart
+	background #5ab2cb
+	vertical-align middle
+	padding 20px
+	padding-top 16px
+	padding-bottom 16px
+	padding-left 30px
+	padding-right 30px
+	margin-right 1px
+	color white
+	font-size 1.4em
+	border none
+	cursor pointer
+	border-radius 0px
+.btn-primary:hover
+	background darken(#5ab2cb, 5%)
+
+.shopping-cart-container
+	min-height 600px
+
+.store-content
+	make-sm-column(9)
+	padding-left 30px
+	
+	h1
+		margin-top 0px
+	
+	>h1
+		margin-left 8px
+
+.shopping-cart-items
+	make-md-column(8)
+	padding-left 0px
+	padding-bottom 50px
+	
+	.shopping-cart-item
+		.shopping-cart-item-image
+			make-xs-column(6)
+			margin-bottom 15px
+			img
+				width 100%
+		
+		.shopping-cart-item-description
+			margin-left 40px
+			make-xs-column(4)
+
+			.shopping-cart-title
+				font-size 1.8em
+				min-width 200px
+				padding-bottom 16px
+				font-weight 400
+				line-height 34px
+				
+			.shopping-cart-price
+				color #5fb7cf
+				font-size 1.2em
+				
+			.quantity-box
+				display inline-block
+				width 66px
+				margin-right: 10px
+				vertical-align middle 
+				
+				input
+					width 100%
+					
+			.clear-button
+				background-image url('/images/searchclear.png')
+				background-size 24px
+				height 24px
+				width 24px
+				display inline-block
+				vertical-align middle
+
+.navbar-default .navbar-nav > li > a.shopping-cart
+	background-image url('/images/carticon.png')
+	background-repeat no-repeat
+	background-position left center
+	min-height 40px
+	background-size 24px auto
+	text-align right
+	padding-left 32px
+	padding-right 0px
+	
+	font-size 16px
+	color #656565
+	
+	&:visited
+		color #656565
+	
+	&:active
+		color #656565
+	
+	.shopping-cart-label
+		display inline-block
+		vertical-align middle
+			
+	.shopping-cart-count
+		display inline-block
+		vertical-align middle
+		background-color #59b1ca
+		color white
+		width 24px
+		height 24px
+		border-radius 12px
+		text-align center
+		font-size 14px
+		line-height 24px
+		margin-left 6px
+			
+		
+.shopping-cart-price
+	font-size 16
+	font-weight 600
+	display inline-block
+	margin-right 10px
+
+.checkout
+	make-md-column(4)
+	padding-left 0px
+	padding-right 0px
+	border 1px solid rgb(230,230,230)
+	border-radius 6px
+	margin-top 10px
+	padding-bottom 20px
+	text-align center
+
+	.checkout-form
+		padding-left 15px
+		padding-right 15px
+		
+		label
+			padding-top 20px
+			padding-bottom 15px
+			font-size 1.4em
+			
+	.form-inline .form-control
+		width 48%
+		
+		margin-right 4%
+		
+		&:last-child
+			margin-right 0px
+		
+	.checkout-line
+		height 60px
+		line-height @height
+		text-align left
+		font-size 1.2em
+		
+		&.total
+			background #fafcfc
+			border-bottom 1px solid rgb(230, 230, 230)
+
+		.checkout-title
+			make-xs-column(6)
+			display inline-block
+			vertical-align middle
+			color rgba(0,0,0,0.6)
+		
+		.checkout-value
+			make-xs-column(6)
+			font-weight bold
+			display inline-block
+			vertical-align middle
+			text-align right
+			color black
+	
+	.btn-primary
+		margin-top 20px
+		margin-bottom 0px
+		
+.btn-primary
+		margin-bottom 20px
+
+.container.padding-bottom
+	padding-bottom 60px
+
+.container.store-container
+	padding-bottom 60px
+	padding-left 0px
+	padding-right 0px
+	
+.blog-content
+	make-sm-column(9)
+	padding-left 30px
+	
+	h1
+		margin-top 0px
+
+#footer
+	text-align center
+	padding-bottom 50px
+	
+	ul.nav
+		text-align center
+		margin-bottom 60px
+		
+		li
+			display inline-block
+			text-transform uppercase
+			font-weight 300
+			padding-left 15px
+			padding-right 15px
+			
+			> a
+				font-size 26px
+				color #656565
+				&:hover
+					background transparent
+					color #5fb7cf
+				
+			&.active
+				> a
+					color #5fb7cf
+		
+.image-wrap
+	padding-bottom 50px
+	
+.pull-right.text-muted
+	font-size 18px
+		
+@media (min-width: $screen-xs-min)
+
+	.shopping-cart-item-description
+		margin-top 40px
+		
+@media (min-width: $screen-sm-min)
+
+	.shopping-cart-item-description
+		margin-top 110px
+
+@media (min-width: $screen-md-min)
+	.home-image
+		background transparent url('/images/mainimage.png') no-repeat
+		background-size cover
+		height 638px
+		
+		.container
+			height 638px
+			position relative
+			
+			.tag-line
+				font-size 80px
+	
+	.newsletter-form
+		.call-to-action
+			p
+				font-size 80px
+	
+	.container.collections
+		.collection
+			.collection-image
+				margin 0px
+				height 474px
+				cursor pointer
+				position relative
+				
+				// Tag Line
+				.tag-line
+					font-size 76px
+	
+	.shopping-cart-item-description
+		margin-top 105px
+	
+@media (min-width: $screen-lg-min)
+	.product
+		padding 10px
+		
+	.shopping-cart-item-description
+		margin-top 140px
+	

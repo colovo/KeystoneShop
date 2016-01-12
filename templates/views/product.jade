@@ -1,0 +1,59 @@
+extends ../layouts/default
+
+block content
+	- var product = data.product
+	.container.store-container
+		if !product
+			h2 Invalid product.
+		else
+			.categories
+				h2 Categories
+				hr
+				.list-group
+					a(href='/store', class=!data.category ? 'active' : false).list-group-item All Categories
+					each cat in data.categories
+						a(href='/store/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+
+						each subCat in cat.categories
+							a(href='/store/' + subCat.key, class=data.category && data.category.id == subCat.id ? 'active' : false).list-group-item.sub-item= subCat.name
+
+			.store-content
+				.col-sm-7
+					if product.image.exists
+						.image-wrap: img(src=product._.image.fit(750,450)).img-responsive
+				
+				.col-sm-5(style='padding-right: 0px')
+					h1= product.title
+					p!= product.description
+					.product-price-product= numeral(product.price).format('$0.00')
+					#addToCart(style='margin-top:10px;')
+						.btn-text Add to Cart
+						.btn-count
+
+block js
+	script(type="text/javascript").
+		//- var shoppingCart = localStorage.getItem("shoppingCart") || []
+		
+		var product = !{ JSON.stringify(product) }
+		var addToCartButton = document.getElementById('addToCart')
+
+		var addToCartCount = addToCartButton.getElementsByClassName('btn-count')[0]
+
+		var quantity = window.getQuantityForProductSlug(product.slug)
+
+		if (quantity > 0) {
+			addToCartCount.innerText = quantity
+			addToCartCount.style.display = 'block'
+		}
+
+		//- addToCartButton.innerText = "Add to Cart (" + quantity + ")"
+
+		addToCartButton.onmousedown = function(event) {
+			var quantity = addToCart(product)
+
+			addToCartCount.innerText = quantity
+			addToCartCount.style.display = 'block'
+
+			event.preventDefault()
+			return false
+		}
