@@ -11,6 +11,7 @@
     "keystone": "https://github.com/keystonejs/keystone.git",
     "numeral": "^1.5.3",
     "stripe": "^4.1.0",
+    "stylus": "^0.53.0",
     "superagent": "^1.6.1",
     "underscore": "^1.8.3",
     "watchify": "^3.6.1"
